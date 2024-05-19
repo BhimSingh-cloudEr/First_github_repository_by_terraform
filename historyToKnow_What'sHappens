@@ -1,0 +1,1014 @@
+      + git_clone_url               = (known after apply)
+      + html_url                    = (known after apply)
+      + http_clone_url              = (known after apply)
+      + id                          = (known after apply)
+      + merge_commit_message        = "PR_TITLE"
+      + merge_commit_title          = "MERGE_MESSAGE"
+      + name                        = "First_github_repository_by_terraform"
+      + node_id                     = (known after apply)
+      + primary_language            = (known after apply)
+      + private                     = (known after apply)
+      + repo_id                     = (known after apply)
+      + squash_merge_commit_message = "COMMIT_MESSAGES"
+      + squash_merge_commit_title   = "COMMIT_OR_PR_TITLE"
+      + ssh_clone_url               = (known after apply)
+      + svn_url                     = (known after apply)
+      + topics                      = (known after apply)
+      + visibility                  = "public"
+      + web_commit_signoff_required = false
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+github_repository.firstGitRepo_By_terraform: Creating...
+github_repository.firstGitRepo_By_terraform: Creation complete after 6s [id=First_github_repository_by_terraform]
+
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ git add .
+fatal: not a git repository (or any of the parent directories): .git
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint:   git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint:   git branch -m <name>
+Initialized empty Git repository in /home/kali/Terraform-for-beginners/gitRepo/.git/
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ git config --global init.defaultBranch firstgitRepo.tf
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ git add .
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ git commit -m "New Commit in the Terraform git repo" firstgitRepo.tf
+error: pathspec 'firstgitRepo.tf' did not match any file(s) known to git
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ git commit -m "New Commit in the Terraform git repo" 
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <kali@The-beast.>) not allowed
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$  git config --global user.email "bheemsingh84200@gmail.com"
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$   git config --global user.name "BhimSingh-cloudEr"
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ git commit -m "New Commit in the Terraform git repo" firstgitRepo.tf
+error: pathspec 'firstgitRepo.tf' did not match any file(s) known to git
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ terraform destroy
+github_repository.firstGitRepo_By_terraform: Refreshing state... [id=First_github_repository_by_terraform]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # github_repository.firstGitRepo_By_terraform will be destroyed
+  - resource "github_repository" "firstGitRepo_By_terraform" {
+      - allow_auto_merge            = false -> null
+      - allow_merge_commit          = true -> null
+      - allow_rebase_merge          = true -> null
+      - allow_squash_merge          = true -> null
+      - allow_update_branch         = false -> null
+      - archived                    = false -> null
+      - auto_init                   = true -> null
+      - default_branch              = "main" -> null
+      - delete_branch_on_merge      = false -> null
+      - description                 = "My first github repo creating during learning terraform by Gauvar Sharma" -> null
+      - etag                        = "W/\"8af4b9a1437911f978c6e6fae884d44b52b1f2e154254367acf347a5f0036204\"" -> null
+      - full_name                   = "BhimSingh-cloudEr/First_github_repository_by_terraform" -> null
+      - git_clone_url               = "git://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform.git" -> null
+      - has_discussions             = false -> null
+      - has_downloads               = false -> null
+      - has_issues                  = false -> null
+      - has_projects                = false -> null
+      - has_wiki                    = false -> null
+      - html_url                    = "https://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform" -> null
+      - http_clone_url              = "https://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform.git" -> null
+      - id                          = "First_github_repository_by_terraform" -> null
+      - is_template                 = false -> null
+      - merge_commit_message        = "PR_TITLE" -> null
+      - merge_commit_title          = "MERGE_MESSAGE" -> null
+      - name                        = "First_github_repository_by_terraform" -> null
+      - node_id                     = "R_kgDOL9v-lg" -> null
+      - private                     = false -> null
+      - repo_id                     = 802946710 -> null
+      - squash_merge_commit_message = "COMMIT_MESSAGES" -> null
+      - squash_merge_commit_title   = "COMMIT_OR_PR_TITLE" -> null
+      - ssh_clone_url               = "git@github.com:BhimSingh-cloudEr/First_github_repository_by_terraform.git" -> null
+      - svn_url                     = "https://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform" -> null
+      - topics                      = [] -> null
+      - visibility                  = "public" -> null
+      - vulnerability_alerts        = false -> null
+      - web_commit_signoff_required = false -> null
+
+      - security_and_analysis {
+          - secret_scanning {
+              - status = "enabled" -> null
+            }
+          - secret_scanning_push_protection {
+              - status = "enabled" -> null
+            }
+        }
+    }
+
+Plan: 0 to add, 0 to change, 1 to destroy.
+
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value: yes
+
+github_repository.firstGitRepo_By_terraform: Destroying... [id=First_github_repository_by_terraform]
+github_repository.firstGitRepo_By_terraform: Destruction complete after 1s
+
+Destroy complete! Resources: 1 destroyed.
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ terraform apply --auto-approve
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # github_repository.firstGitRepo_By_terraform will be created
+  + resource "github_repository" "firstGitRepo_By_terraform" {
+      + allow_auto_merge            = false
+      + allow_merge_commit          = true
+      + allow_rebase_merge          = true
+      + allow_squash_merge          = true
+      + archived                    = false
+      + auto_init                   = true
+      + default_branch              = (known after apply)
+      + delete_branch_on_merge      = false
+      + description                 = "My first github repo creating during learning terraform by Gauvar Sharma"
+      + etag                        = (known after apply)
+      + full_name                   = (known after apply)
+      + git_clone_url               = (known after apply)
+      + html_url                    = (known after apply)
+      + http_clone_url              = (known after apply)
+      + id                          = (known after apply)
+      + merge_commit_message        = "PR_TITLE"
+      + merge_commit_title          = "MERGE_MESSAGE"
+      + name                        = "First_github_repository_by_terraform"
+      + node_id                     = (known after apply)
+      + primary_language            = (known after apply)
+      + private                     = (known after apply)
+      + repo_id                     = (known after apply)
+      + squash_merge_commit_message = "COMMIT_MESSAGES"
+      + squash_merge_commit_title   = "COMMIT_OR_PR_TITLE"
+      + ssh_clone_url               = (known after apply)
+      + svn_url                     = (known after apply)
+      + topics                      = (known after apply)
+      + visibility                  = "public"
+      + web_commit_signoff_required = false
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+github_repository.firstGitRepo_By_terraform: Creating...
+github_repository.firstGitRepo_By_terraform: Creation complete after 6s [id=First_github_repository_by_terraform]
+
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ terraform destroy
+github_repository.firstGitRepo_By_terraform: Refreshing state... [id=First_github_repository_by_terraform]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # github_repository.firstGitRepo_By_terraform will be destroyed
+  - resource "github_repository" "firstGitRepo_By_terraform" {
+      - allow_auto_merge            = false -> null
+      - allow_merge_commit          = true -> null
+      - allow_rebase_merge          = true -> null
+      - allow_squash_merge          = true -> null
+      - allow_update_branch         = false -> null
+      - archived                    = false -> null
+      - auto_init                   = true -> null
+      - default_branch              = "main" -> null
+      - delete_branch_on_merge      = false -> null
+      - description                 = "My first github repo creating during learning terraform by Gauvar Sharma" -> null
+      - etag                        = "W/\"2d635cbb444a59dc5bf81c754a310a4c4530fc8a33f6ec90cf2f5144eecb0962\"" -> null
+      - full_name                   = "BhimSingh-cloudEr/First_github_repository_by_terraform" -> null
+      - git_clone_url               = "git://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform.git" -> null
+      - has_discussions             = false -> null
+      - has_downloads               = false -> null
+      - has_issues                  = false -> null
+      - has_projects                = false -> null
+      - has_wiki                    = false -> null
+      - html_url                    = "https://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform" -> null
+      - http_clone_url              = "https://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform.git" -> null
+      - id                          = "First_github_repository_by_terraform" -> null
+      - is_template                 = false -> null
+      - merge_commit_message        = "PR_TITLE" -> null
+      - merge_commit_title          = "MERGE_MESSAGE" -> null
+      - name                        = "First_github_repository_by_terraform" -> null
+      - node_id                     = "R_kgDOL9wzug" -> null
+      - private                     = false -> null
+      - repo_id                     = 802960314 -> null
+      - squash_merge_commit_message = "COMMIT_MESSAGES" -> null
+      - squash_merge_commit_title   = "COMMIT_OR_PR_TITLE" -> null
+      - ssh_clone_url               = "git@github.com:BhimSingh-cloudEr/First_github_repository_by_terraform.git" -> null
+      - svn_url                     = "https://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform" -> null
+      - topics                      = [] -> null
+      - visibility                  = "public" -> null
+      - vulnerability_alerts        = false -> null
+      - web_commit_signoff_required = false -> null
+
+      - security_and_analysis {
+          - secret_scanning {
+              - status = "enabled" -> null
+            }
+          - secret_scanning_push_protection {
+              - status = "enabled" -> null
+            }
+        }
+    }
+
+Plan: 0 to add, 0 to change, 1 to destroy.
+
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value: yes
+
+github_repository.firstGitRepo_By_terraform: Destroying... [id=First_github_repository_by_terraform]
+github_repository.firstGitRepo_By_terraform: Destruction complete after 0s
+
+Destroy complete! Resources: 1 destroyed.
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ ls
+FirstGitRepo.tf  providers.tf  terraform.tfstate  terraform.tfstate.backup  terraform.tfvars
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ ls -a
+.  ..  FirstGitRepo.tf  .git  providers.tf  .terraform  .terraform.lock.hcl  terraform.tfstate  terraform.tfstate.backup  terraform.tfvars
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ rm -rf .git
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ ls -a
+.  ..  FirstGitRepo.tf  providers.tf  .terraform  .terraform.lock.hcl  terraform.tfstate  terraform.tfstate.backup  terraform.tfvars
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ terraform apply --auto-approve
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # github_repository.firstGitRepo_By_terraform will be created
+  + resource "github_repository" "firstGitRepo_By_terraform" {
+      + allow_auto_merge            = false
+      + allow_merge_commit          = true
+      + allow_rebase_merge          = true
+      + allow_squash_merge          = true
+      + archived                    = false
+      + auto_init                   = true
+      + default_branch              = (known after apply)
+      + delete_branch_on_merge      = false
+      + description                 = "My first github repo creating during learning terraform by Gauvar Sharma"
+      + etag                        = (known after apply)
+      + full_name                   = (known after apply)
+      + git_clone_url               = (known after apply)
+      + html_url                    = (known after apply)
+      + http_clone_url              = (known after apply)
+      + id                          = (known after apply)
+      + merge_commit_message        = "PR_TITLE"
+      + merge_commit_title          = "MERGE_MESSAGE"
+      + name                        = "First_github_repository_by_terraform"
+      + node_id                     = (known after apply)
+      + primary_language            = (known after apply)
+      + private                     = (known after apply)
+      + repo_id                     = (known after apply)
+      + squash_merge_commit_message = "COMMIT_MESSAGES"
+      + squash_merge_commit_title   = "COMMIT_OR_PR_TITLE"
+      + ssh_clone_url               = (known after apply)
+      + svn_url                     = (known after apply)
+      + topics                      = (known after apply)
+      + visibility                  = "public"
+      + web_commit_signoff_required = false
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+github_repository.firstGitRepo_By_terraform: Creating...
+╷
+│ Warning: Value for undeclared variable
+│ 
+│ The root module does not declare a variable named "token" but a value was found in file "terraform.tfvars". If you meant to use this value, add a
+│ "variable" block to the configuration.
+│ 
+│ To silence these warnings, use TF_VAR_... environment variables to provide certain "global" settings to all configurations in your organization. To
+│ reduce the verbosity of these warnings, use the -compact-warnings option.
+╵
+╷
+│ Error: POST https://api.github.com/user/repos: 401 Requires authentication []
+│ 
+│   with github_repository.firstGitRepo_By_terraform,
+│   on FirstGitRepo.tf line 5, in resource "github_repository" "firstGitRepo_By_terraform":
+│    5: resource "github_repository" "firstGitRepo_By_terraform" {
+│ 
+╵
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ terraform init
+
+Initializing the backend...
+
+Initializing provider plugins...
+- Reusing previous version of hashicorp/github from the dependency lock file
+- Using previously-installed hashicorp/github v6.2.1
+
+╷
+│ Warning: Additional provider information from registry
+│ 
+│ The remote registry returned warnings for registry.terraform.io/hashicorp/github:
+│ - For users on Terraform 0.13 or greater, this provider has moved to integrations/github. Please update your source in required_providers.
+╵
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ terraform apply --auto-approve
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # github_repository.firstGitRepo_By_terraform will be created
+  + resource "github_repository" "firstGitRepo_By_terraform" {
+      + allow_auto_merge            = false
+      + allow_merge_commit          = true
+      + allow_rebase_merge          = true
+      + allow_squash_merge          = true
+      + archived                    = false
+      + auto_init                   = true
+      + default_branch              = (known after apply)
+      + delete_branch_on_merge      = false
+      + description                 = "My first github repo creating during learning terraform by Gauvar Sharma"
+      + etag                        = (known after apply)
+      + full_name                   = (known after apply)
+      + git_clone_url               = (known after apply)
+      + html_url                    = (known after apply)
+      + http_clone_url              = (known after apply)
+      + id                          = (known after apply)
+      + merge_commit_message        = "PR_TITLE"
+      + merge_commit_title          = "MERGE_MESSAGE"
+      + name                        = "First_github_repository_by_terraform"
+      + node_id                     = (known after apply)
+      + primary_language            = (known after apply)
+      + private                     = (known after apply)
+      + repo_id                     = (known after apply)
+      + squash_merge_commit_message = "COMMIT_MESSAGES"
+      + squash_merge_commit_title   = "COMMIT_OR_PR_TITLE"
+      + ssh_clone_url               = (known after apply)
+      + svn_url                     = (known after apply)
+      + topics                      = (known after apply)
+      + visibility                  = "public"
+      + web_commit_signoff_required = false
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+github_repository.firstGitRepo_By_terraform: Creating...
+╷
+│ Warning: Value for undeclared variable
+│ 
+│ The root module does not declare a variable named "token" but a value was found in file "terraform.tfvars". If you meant to use this value, add a
+│ "variable" block to the configuration.
+│ 
+│ To silence these warnings, use TF_VAR_... environment variables to provide certain "global" settings to all configurations in your organization. To
+│ reduce the verbosity of these warnings, use the -compact-warnings option.
+╵
+╷
+│ Error: POST https://api.github.com/user/repos: 401 Requires authentication []
+│ 
+│   with github_repository.firstGitRepo_By_terraform,
+│   on FirstGitRepo.tf line 5, in resource "github_repository" "firstGitRepo_By_terraform":
+│    5: resource "github_repository" "firstGitRepo_By_terraform" {
+│ 
+╵
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ terraform plan
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # github_repository.firstGitRepo_By_terraform will be created
+  + resource "github_repository" "firstGitRepo_By_terraform" {
+      + allow_auto_merge            = false
+      + allow_merge_commit          = true
+      + allow_rebase_merge          = true
+      + allow_squash_merge          = true
+      + archived                    = false
+      + auto_init                   = true
+      + default_branch              = (known after apply)
+      + delete_branch_on_merge      = false
+      + description                 = "My first github repo creating during learning terraform by Gauvar Sharma"
+      + etag                        = (known after apply)
+      + full_name                   = (known after apply)
+      + git_clone_url               = (known after apply)
+      + html_url                    = (known after apply)
+      + http_clone_url              = (known after apply)
+      + id                          = (known after apply)
+      + merge_commit_message        = "PR_TITLE"
+      + merge_commit_title          = "MERGE_MESSAGE"
+      + name                        = "First_github_repository_by_terraform"
+      + node_id                     = (known after apply)
+      + primary_language            = (known after apply)
+      + private                     = (known after apply)
+      + repo_id                     = (known after apply)
+      + squash_merge_commit_message = "COMMIT_MESSAGES"
+      + squash_merge_commit_title   = "COMMIT_OR_PR_TITLE"
+      + ssh_clone_url               = (known after apply)
+      + svn_url                     = (known after apply)
+      + topics                      = (known after apply)
+      + visibility                  = "public"
+      + web_commit_signoff_required = false
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+╷
+│ Warning: Value for undeclared variable
+│ 
+│ The root module does not declare a variable named "token" but a value was found in file "terraform.tfvars". If you meant to use this value, add a
+│ "variable" block to the configuration.
+│ 
+│ To silence these warnings, use TF_VAR_... environment variables to provide certain "global" settings to all configurations in your organization. To
+│ reduce the verbosity of these warnings, use the -compact-warnings option.
+╵
+
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Note: You didn't use the -out option to save this plan, so Terraform can't guarantee to take exactly these actions if you run "terraform apply" now.
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ terraform fmt
+providers.tf
+terraform.tfvars
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ terraform apply --auto-approve
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # github_repository.firstGitRepo_By_terraform will be created
+  + resource "github_repository" "firstGitRepo_By_terraform" {
+      + allow_auto_merge            = false
+      + allow_merge_commit          = true
+      + allow_rebase_merge          = true
+      + allow_squash_merge          = true
+      + archived                    = false
+      + auto_init                   = true
+      + default_branch              = (known after apply)
+      + delete_branch_on_merge      = false
+      + description                 = "My first github repo creating during learning terraform by Gauvar Sharma"
+      + etag                        = (known after apply)
+      + full_name                   = (known after apply)
+      + git_clone_url               = (known after apply)
+      + html_url                    = (known after apply)
+      + http_clone_url              = (known after apply)
+      + id                          = (known after apply)
+      + merge_commit_message        = "PR_TITLE"
+      + merge_commit_title          = "MERGE_MESSAGE"
+      + name                        = "First_github_repository_by_terraform"
+      + node_id                     = (known after apply)
+      + primary_language            = (known after apply)
+      + private                     = (known after apply)
+      + repo_id                     = (known after apply)
+      + squash_merge_commit_message = "COMMIT_MESSAGES"
+      + squash_merge_commit_title   = "COMMIT_OR_PR_TITLE"
+      + ssh_clone_url               = (known after apply)
+      + svn_url                     = (known after apply)
+      + topics                      = (known after apply)
+      + visibility                  = "public"
+      + web_commit_signoff_required = false
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+github_repository.firstGitRepo_By_terraform: Creating...
+github_repository.firstGitRepo_By_terraform: Creation complete after 5s [id=First_github_repository_by_terraform]
+
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ terraform fmt
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ terraform validate
+Success! The configuration is valid.
+
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ terraform destroy
+github_repository.firstGitRepo_By_terraform: Refreshing state... [id=First_github_repository_by_terraform]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # github_repository.firstGitRepo_By_terraform will be destroyed
+  - resource "github_repository" "firstGitRepo_By_terraform" {
+      - allow_auto_merge            = false -> null
+      - allow_merge_commit          = true -> null
+      - allow_rebase_merge          = true -> null
+      - allow_squash_merge          = true -> null
+      - allow_update_branch         = false -> null
+      - archived                    = false -> null
+      - auto_init                   = true -> null
+      - default_branch              = "main" -> null
+      - delete_branch_on_merge      = false -> null
+      - description                 = "My first github repo creating during learning terraform by Gauvar Sharma" -> null
+      - etag                        = "W/\"54e1e6c6ec2f2c7288baa66377e971517edc71f968005ae78d96453941b10ff3\"" -> null
+      - full_name                   = "BhimSingh-cloudEr/First_github_repository_by_terraform" -> null
+      - git_clone_url               = "git://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform.git" -> null
+      - has_discussions             = false -> null
+      - has_downloads               = false -> null
+      - has_issues                  = false -> null
+      - has_projects                = false -> null
+      - has_wiki                    = false -> null
+      - html_url                    = "https://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform" -> null
+      - http_clone_url              = "https://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform.git" -> null
+      - id                          = "First_github_repository_by_terraform" -> null
+      - is_template                 = false -> null
+      - merge_commit_message        = "PR_TITLE" -> null
+      - merge_commit_title          = "MERGE_MESSAGE" -> null
+      - name                        = "First_github_repository_by_terraform" -> null
+      - node_id                     = "R_kgDOL9w8IA" -> null
+      - private                     = false -> null
+      - repo_id                     = 802962464 -> null
+      - squash_merge_commit_message = "COMMIT_MESSAGES" -> null
+      - squash_merge_commit_title   = "COMMIT_OR_PR_TITLE" -> null
+      - ssh_clone_url               = "git@github.com:BhimSingh-cloudEr/First_github_repository_by_terraform.git" -> null
+      - svn_url                     = "https://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform" -> null
+      - topics                      = [] -> null
+      - visibility                  = "public" -> null
+      - vulnerability_alerts        = false -> null
+      - web_commit_signoff_required = false -> null
+
+      - security_and_analysis {
+          - secret_scanning {
+              - status = "enabled" -> null
+            }
+          - secret_scanning_push_protection {
+              - status = "enabled" -> null
+            }
+        }
+    }
+
+Plan: 0 to add, 0 to change, 1 to destroy.
+
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value: yes
+
+github_repository.firstGitRepo_By_terraform: Destroying... [id=First_github_repository_by_terraform]
+github_repository.firstGitRepo_By_terraform: Destruction complete after 0s
+
+Destroy complete! Resources: 1 destroyed.
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ terraform refresh
+╷
+│ Warning: Empty or non-existent state
+│ 
+│ There are currently no remote objects tracked in the state, so there is nothing to refresh.
+╵
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ terraform show
+The state file is empty. No resources are represented.
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ terraform apply --auto-approve
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # github_repository.firstGitRepo_By_terraform will be created
+  + resource "github_repository" "firstGitRepo_By_terraform" {
+      + allow_auto_merge            = false
+      + allow_merge_commit          = true
+      + allow_rebase_merge          = true
+      + allow_squash_merge          = true
+      + archived                    = false
+      + auto_init                   = true
+      + default_branch              = (known after apply)
+      + delete_branch_on_merge      = false
+      + description                 = "My first github repo creating during learning terraform by Gauvar Sharma"
+      + etag                        = (known after apply)
+      + full_name                   = (known after apply)
+      + git_clone_url               = (known after apply)
+      + html_url                    = (known after apply)
+      + http_clone_url              = (known after apply)
+      + id                          = (known after apply)
+      + merge_commit_message        = "PR_TITLE"
+      + merge_commit_title          = "MERGE_MESSAGE"
+      + name                        = "First_github_repository_by_terraform"
+      + node_id                     = (known after apply)
+      + primary_language            = (known after apply)
+      + private                     = (known after apply)
+      + repo_id                     = (known after apply)
+      + squash_merge_commit_message = "COMMIT_MESSAGES"
+      + squash_merge_commit_title   = "COMMIT_OR_PR_TITLE"
+      + ssh_clone_url               = (known after apply)
+      + svn_url                     = (known after apply)
+      + topics                      = (known after apply)
+      + visibility                  = "public"
+      + web_commit_signoff_required = false
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+github_repository.firstGitRepo_By_terraform: Creating...
+github_repository.firstGitRepo_By_terraform: Creation complete after 6s [id=First_github_repository_by_terraform]
+
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ terraform refresh
+github_repository.firstGitRepo_By_terraform: Refreshing state... [id=First_github_repository_by_terraform]
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ terraform show
+# github_repository.firstGitRepo_By_terraform:
+resource "github_repository" "firstGitRepo_By_terraform" {
+    allow_auto_merge            = false
+    allow_merge_commit          = true
+    allow_rebase_merge          = true
+    allow_squash_merge          = true
+    allow_update_branch         = false
+    archived                    = false
+    auto_init                   = true
+    default_branch              = "main"
+    delete_branch_on_merge      = false
+    description                 = "My first github repo creating during learning terraform by Gauvar Sharma"
+    etag                        = "W/\"780e5f8d2d9eeeefdf214a62b9edf34f955ff7ed0ac68bb2384c3edbddc30b84\""
+    full_name                   = "BhimSingh-cloudEr/First_github_repository_by_terraform"
+    git_clone_url               = "git://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform.git"
+    has_discussions             = false
+    has_downloads               = false
+    has_issues                  = false
+    has_projects                = false
+    has_wiki                    = false
+    html_url                    = "https://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform"
+    http_clone_url              = "https://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform.git"
+    id                          = "First_github_repository_by_terraform"
+    is_template                 = false
+    merge_commit_message        = "PR_TITLE"
+    merge_commit_title          = "MERGE_MESSAGE"
+    name                        = "First_github_repository_by_terraform"
+    node_id                     = "R_kgDOL9xE_Q"
+    private                     = false
+    repo_id                     = 802964733
+    squash_merge_commit_message = "COMMIT_MESSAGES"
+    squash_merge_commit_title   = "COMMIT_OR_PR_TITLE"
+    ssh_clone_url               = "git@github.com:BhimSingh-cloudEr/First_github_repository_by_terraform.git"
+    svn_url                     = "https://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform"
+    topics                      = []
+    visibility                  = "public"
+    vulnerability_alerts        = false
+    web_commit_signoff_required = false
+
+    security_and_analysis {
+        secret_scanning {
+            status = "enabled"
+        }
+        secret_scanning_push_protection {
+            status = "enabled"
+        }
+    }
+}
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ terraform refresh
+github_repository.firstGitRepo_By_terraform: Refreshing state... [id=First_github_repository_by_terraform]
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ terraform show
+# github_repository.firstGitRepo_By_terraform:
+resource "github_repository" "firstGitRepo_By_terraform" {
+    allow_auto_merge            = false
+    allow_merge_commit          = true
+    allow_rebase_merge          = true
+    allow_squash_merge          = true
+    allow_update_branch         = false
+    archived                    = false
+    auto_init                   = true
+    default_branch              = "main"
+    delete_branch_on_merge      = false
+    description                 = "My first github repo creating during learning terraform by Gauvar Sharma"
+    etag                        = "W/\"264bf47c4463835405646ca220b3126faf2a33151be3842a8ba90aa580562fa2\""
+    full_name                   = "BhimSingh-cloudEr/First_github_repository_by_terraform"
+    git_clone_url               = "git://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform.git"
+    has_discussions             = false
+    has_downloads               = false
+    has_issues                  = false
+    has_projects                = false
+    has_wiki                    = false
+    html_url                    = "https://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform"
+    http_clone_url              = "https://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform.git"
+    id                          = "First_github_repository_by_terraform"
+    is_template                 = false
+    merge_commit_message        = "PR_TITLE"
+    merge_commit_title          = "MERGE_MESSAGE"
+    name                        = "First_github_repository_by_terraform"
+    node_id                     = "R_kgDOL9xE_Q"
+    private                     = false
+    repo_id                     = 802964733
+    squash_merge_commit_message = "COMMIT_MESSAGES"
+    squash_merge_commit_title   = "COMMIT_OR_PR_TITLE"
+    ssh_clone_url               = "git@github.com:BhimSingh-cloudEr/First_github_repository_by_terraform.git"
+    svn_url                     = "https://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform"
+    topics                      = []
+    visibility                  = "public"
+    vulnerability_alerts        = false
+    web_commit_signoff_required = false
+
+    security_and_analysis {
+        secret_scanning {
+            status = "enabled"
+        }
+        secret_scanning_push_protection {
+            status = "enabled"
+        }
+    }
+}
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ terraform refresh
+github_repository.firstGitRepo_By_terraform: Refreshing state... [id=First_github_repository_by_terraform]
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ terraform show
+# github_repository.firstGitRepo_By_terraform:
+resource "github_repository" "firstGitRepo_By_terraform" {
+    allow_auto_merge            = false
+    allow_merge_commit          = true
+    allow_rebase_merge          = true
+    allow_squash_merge          = true
+    allow_update_branch         = false
+    archived                    = false
+    auto_init                   = true
+    default_branch              = "main"
+    delete_branch_on_merge      = false
+    description                 = "My first github repo creating during learning terraform by Gauvar Sharma.  Manually Changes Occures"
+    etag                        = "W/\"3b854b62ba242d7f161c88b6faa300d27e2fe37c755648efd1f3899b80e01616\""
+    full_name                   = "BhimSingh-cloudEr/First_github_repository_by_terraform"
+    git_clone_url               = "git://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform.git"
+    has_discussions             = false
+    has_downloads               = false
+    has_issues                  = false
+    has_projects                = false
+    has_wiki                    = false
+    html_url                    = "https://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform"
+    http_clone_url              = "https://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform.git"
+    id                          = "First_github_repository_by_terraform"
+    is_template                 = false
+    merge_commit_message        = "PR_TITLE"
+    merge_commit_title          = "MERGE_MESSAGE"
+    name                        = "First_github_repository_by_terraform"
+    node_id                     = "R_kgDOL9xE_Q"
+    private                     = false
+    repo_id                     = 802964733
+    squash_merge_commit_message = "COMMIT_MESSAGES"
+    squash_merge_commit_title   = "COMMIT_OR_PR_TITLE"
+    ssh_clone_url               = "git@github.com:BhimSingh-cloudEr/First_github_repository_by_terraform.git"
+    svn_url                     = "https://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform"
+    topics                      = []
+    visibility                  = "public"
+    vulnerability_alerts        = false
+    web_commit_signoff_required = false
+
+    security_and_analysis {
+        secret_scanning {
+            status = "enabled"
+        }
+        secret_scanning_push_protection {
+            status = "enabled"
+        }
+    }
+}
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ terraform destroy
+github_repository.firstGitRepo_By_terraform: Refreshing state... [id=First_github_repository_by_terraform]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # github_repository.firstGitRepo_By_terraform will be destroyed
+  - resource "github_repository" "firstGitRepo_By_terraform" {
+      - allow_auto_merge            = false -> null
+      - allow_merge_commit          = true -> null
+      - allow_rebase_merge          = true -> null
+      - allow_squash_merge          = true -> null
+      - allow_update_branch         = false -> null
+      - archived                    = false -> null
+      - auto_init                   = true -> null
+      - default_branch              = "main" -> null
+      - delete_branch_on_merge      = false -> null
+      - description                 = "My first github repo creating during learning terraform by Gauvar Sharma.  Manually Changes Occures" -> null
+      - etag                        = "W/\"3b854b62ba242d7f161c88b6faa300d27e2fe37c755648efd1f3899b80e01616\"" -> null
+      - full_name                   = "BhimSingh-cloudEr/First_github_repository_by_terraform" -> null
+      - git_clone_url               = "git://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform.git" -> null
+      - has_discussions             = false -> null
+      - has_downloads               = false -> null
+      - has_issues                  = false -> null
+      - has_projects                = false -> null
+      - has_wiki                    = false -> null
+      - html_url                    = "https://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform" -> null
+      - http_clone_url              = "https://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform.git" -> null
+      - id                          = "First_github_repository_by_terraform" -> null
+      - is_template                 = false -> null
+      - merge_commit_message        = "PR_TITLE" -> null
+      - merge_commit_title          = "MERGE_MESSAGE" -> null
+      - name                        = "First_github_repository_by_terraform" -> null
+      - node_id                     = "R_kgDOL9xE_Q" -> null
+      - private                     = false -> null
+      - repo_id                     = 802964733 -> null
+      - squash_merge_commit_message = "COMMIT_MESSAGES" -> null
+      - squash_merge_commit_title   = "COMMIT_OR_PR_TITLE" -> null
+      - ssh_clone_url               = "git@github.com:BhimSingh-cloudEr/First_github_repository_by_terraform.git" -> null
+      - svn_url                     = "https://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform" -> null
+      - topics                      = [] -> null
+      - visibility                  = "public" -> null
+      - vulnerability_alerts        = false -> null
+      - web_commit_signoff_required = false -> null
+
+      - security_and_analysis {
+          - secret_scanning {
+              - status = "enabled" -> null
+            }
+          - secret_scanning_push_protection {
+              - status = "enabled" -> null
+            }
+        }
+    }
+
+Plan: 0 to add, 0 to change, 1 to destroy.
+
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value: no
+
+Destroy cancelled.
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ terraform validate
+Success! The configuration is valid.
+
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ terraform show
+# github_repository.firstGitRepo_By_terraform:
+resource "github_repository" "firstGitRepo_By_terraform" {
+    allow_auto_merge            = false
+    allow_merge_commit          = true
+    allow_rebase_merge          = true
+    allow_squash_merge          = true
+    allow_update_branch         = false
+    archived                    = false
+    auto_init                   = true
+    default_branch              = "main"
+    delete_branch_on_merge      = false
+    description                 = "My first github repo creating during learning terraform by Gauvar Sharma.  Manually Changes Occures"
+    etag                        = "W/\"3b854b62ba242d7f161c88b6faa300d27e2fe37c755648efd1f3899b80e01616\""
+    full_name                   = "BhimSingh-cloudEr/First_github_repository_by_terraform"
+    git_clone_url               = "git://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform.git"
+    has_discussions             = false
+    has_downloads               = false
+    has_issues                  = false
+    has_projects                = false
+    has_wiki                    = false
+    html_url                    = "https://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform"
+    http_clone_url              = "https://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform.git"
+    id                          = "First_github_repository_by_terraform"
+    is_template                 = false
+    merge_commit_message        = "PR_TITLE"
+    merge_commit_title          = "MERGE_MESSAGE"
+    name                        = "First_github_repository_by_terraform"
+    node_id                     = "R_kgDOL9xE_Q"
+    private                     = false
+    repo_id                     = 802964733
+    squash_merge_commit_message = "COMMIT_MESSAGES"
+    squash_merge_commit_title   = "COMMIT_OR_PR_TITLE"
+    ssh_clone_url               = "git@github.com:BhimSingh-cloudEr/First_github_repository_by_terraform.git"
+    svn_url                     = "https://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform"
+    topics                      = []
+    visibility                  = "public"
+    vulnerability_alerts        = false
+    web_commit_signoff_required = false
+
+    security_and_analysis {
+        secret_scanning {
+            status = "enabled"
+        }
+        secret_scanning_push_protection {
+            status = "enabled"
+        }
+    }
+}
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ terraform refresh
+github_repository.firstGitRepo_By_terraform: Refreshing state... [id=First_github_repository_by_terraform]
+
+Outputs:
+
+firstGitRepo_By_terraform_url = "https://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform"
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ terraform apply --auto-approve
+github_repository.firstGitRepo_By_terraform: Refreshing state... [id=First_github_repository_by_terraform]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  ~ update in-place
+
+Terraform will perform the following actions:
+
+  # github_repository.firstGitRepo_By_terraform will be updated in-place
+  ~ resource "github_repository" "firstGitRepo_By_terraform" {
+      ~ description                 = "My first github repo creating during learning terraform by Gauvar Sharma.  Manually Changes Occures" -> "My first github repo creating during learning terraform by Gauvar Sharma"
+        id                          = "First_github_repository_by_terraform"
+        name                        = "First_github_repository_by_terraform"
+        # (33 unchanged attributes hidden)
+
+        # (1 unchanged block hidden)
+    }
+
+Plan: 0 to add, 1 to change, 0 to destroy.
+github_repository.firstGitRepo_By_terraform: Modifying... [id=First_github_repository_by_terraform]
+github_repository.firstGitRepo_By_terraform: Modifications complete after 3s [id=First_github_repository_by_terraform]
+
+Apply complete! Resources: 0 added, 1 changed, 0 destroyed.
+
+Outputs:
+
+firstGitRepo_By_terraform_url = "https://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform"
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ terraform output firstGitRepo_By_terraform_url
+"https://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform"
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ ^C
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ 
