@@ -1,0 +1,7 @@
+
+output "firstGitRepo_By_terraform_url" {
+  value = github_repository.firstGitRepo_By_terraform.html_url
+}
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/gitRepo]
+└─$ terraform output firstGitRepo_By_terraform_url
+"https://github.com/BhimSingh-cloudEr/First_github_repository_by_terraform"
