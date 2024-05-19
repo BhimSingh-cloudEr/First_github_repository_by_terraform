@@ -1,0 +1,207 @@
+# provider "github" {
+# token = "lkjhgcfxcgvhbjkjlkjhugfytdfghjjliyuy"
+# }
+
+resource "github_repository" "firstGitRepo_By_terraform" {
+  name        = "First_github_repository_by_terraform"
+  description = "My first github repo creating during learning terraform by Gauvar Sharma"
+  auto_init   = true
+  visibility  = "public"
+}
+
+
+
+output printname{
+value ="Hello,${var.username}"
+}
+output "printage" {
+  value = "Age is,${var.age}"
+}
+
+
+variable username{
+    type = string
+}
+
+variable age{
+    type = number
+}
+
+# output printname{
+# value ="Hello,${var.username}"
+# }
+
+variable users{
+type = list
+}
+
+variable age{
+    type = number
+}
+
+# variable users{
+# type = list
+# }
+
+output printlist{
+value = "First username is ${var.users[0]}"
+}
+
+output "printage" {
+  value = "Age is,${var.age}"
+}
+
+variable "usersage" {
+  type = map(any)
+  default = {
+    Radhe = 20
+    Bhim  = 30
+  }
+}
+variable "usersname" {
+  type = string
+}
+
+output "printrage" {
+  value = "My name is ${var.usersname} and My age is ${lookup(var.usersage, "${var.usersname}")}"
+}
+
+# Block "Label 1" "Label 2"
+# Identifiers = expressions
+
+
+output "Hello" {
+  value = "Hello Radhe_bhim"
+}
+
+
+output "Hello1" {
+  value = "Hello Radhe_bhim"
+}
+
+output "Hello2" {
+  value = "Hello Radhe_bhim"
+}
+
+output "Hello3" {
+  value = "Hello Radhe_bhim"
+}
+
+
+variable "age" {
+  type = number
+}
+
+variable "username" {
+  type = string
+}
+
+output "printoutput" {
+  value = "Hello ${var.username}, And his age is ${var.age}"
+}
+
+# Block "Label 1" "Label 2"
+# Identifiers = expressions
+
+
+output "Hello" {
+  value = "Hello Radhe_bhim"
+}
+
+
+output "Hello1" {
+  value = "Hello Radhe_bhim"
+}
+
+output "Hello2" {
+  value = "Hello Radhe_bhim"
+}
+
+output "Hello3" {
+  value = "Hello Radhe_bhim"
+}
+
+
+variable "age" {
+  type = number
+}
+
+variable "username" {
+  type = string
+}
+
+output "printoutput" {
+  value = "Hello ${var.username}, And his age is ${var.age}"
+}
+
+
+# # Block "Label 1" "Label 2"
+# # Identifiers = expressions
+
+
+# output "Hello" {
+#   value = "Hello Radhe_bhim"
+# }
+
+
+# output "Hello1" {
+#   value = "Hello Radhe_bhim"
+# }
+
+# output "Hello2" {
+#   value = "Hello Radhe_bhim"
+# }
+
+# output "Hello3" {
+#   value = "Hello Radhe_bhim"
+# }
+
+
+variable "age" {
+  type = number
+}
+
+variable "username" {
+  type = string
+}
+
+output "printoutput" {
+  value = "Hello ${var.username}, And his age is ${var.age}"
+}
+
+# Block "Label 1" "Label 2"
+# Identifiers = expressions
+
+
+# output "Hello" {
+#   value = "Hello Radhe_bhim"
+# }
+
+
+# output "Hello1" {
+#   value = "Hello Radhe_bhim"
+# }
+
+# output "Hello2" {
+#   value = "Hello Radhe_bhim"
+# }
+
+# output "Hello3" {
+#   value = "Hello Radhe_bhim"
+# }
+
+
+
+
+variable "age" {
+  type = number
+}
+
+variable "username" {
+  type = string
+}
+
+output "printoutput" {
+  value = "Hello ${var.username}, And his age is ${var.age}"
+}
+
