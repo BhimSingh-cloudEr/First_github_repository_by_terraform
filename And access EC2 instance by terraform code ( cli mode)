@@ -1,0 +1,748 @@
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/AWS-file]
+└─$  ssh -i id_rsa ubuntu@54.242.76.57
+The authenticity of host '54.242.76.57 (54.242.76.57)' can't be established.
+ED25519 key fingerprint is SHA256:xo9PY9t9fQQZlXrxkoDL7V7BFGCUoL3atF6QNP98gAo.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '54.242.76.57' (ED25519) to the list of known hosts.
+Welcome to Ubuntu 24.04 LTS (GNU/Linux 6.8.0-1008-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Tue May 21 02:39:44 UTC 2024
+
+  System load:  0.04              Processes:             107
+  Usage of /:   23.1% of 6.71GB   Users logged in:       0
+  Memory usage: 20%               IPv4 address for enX0: 172.31.17.189
+  Swap usage:   0%
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@ip-172-31-17-189:~$ ls
+ubuntu@ip-172-31-17-189:~$ apt-get update
+Reading package lists... Done
+E: Could not open lock file /var/lib/apt/lists/lock - open (13: Permission denied)
+E: Unable to lock directory /var/lib/apt/lists/
+W: Problem unlinking the file /var/cache/apt/pkgcache.bin - RemoveCaches (13: Permission denied)
+W: Problem unlinking the file /var/cache/apt/srcpkgcache.bin - RemoveCaches (13: Permission denied)
+ubuntu@ip-172-31-17-189:~$ sudo apt-get update
+Ign:1 http://security.ubuntu.com/ubuntu noble-security InRelease                                                                                      
+Ign:1 http://security.ubuntu.com/ubuntu noble-security InRelease                                                                                      
+Ign:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble InRelease                         
+Ign:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates InRelease                 
+Ign:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports InRelease
+Ign:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble InRelease
+Ign:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates InRelease
+Ign:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports InRelease
+Ign:1 http://security.ubuntu.com/ubuntu noble-security InRelease
+Ign:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble InRelease
+Ign:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates InRelease
+Ign:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports InRelease
+Err:1 http://security.ubuntu.com/ubuntu noble-security InRelease
+  Cannot initiate the connection to security.ubuntu.com:80 (2620:2d:4002:1::101). - connect (101: Network is unreachable) Cannot initiate the connection to security.ubuntu.com:80 (2620:2d:4002:1::102). - connect (101: Network is unreachable) Cannot initiate the connection to security.ubuntu.com:80 (2620:2d:4002:1::103). - connect (101: Network is unreachable) Cannot initiate the connection to security.ubuntu.com:80 (2620:2d:4000:1::16). - connect (101: Network is unreachable) Cannot initiate the connection to security.ubuntu.com:80 (2620:2d:4000:1::19). - connect (101: Network is unreachable) Could not connect to security.ubuntu.com:80 (91.189.91.82), connection timed out Could not connect to security.ubuntu.com:80 (91.189.91.83), connection timed out Could not connect to security.ubuntu.com:80 (185.125.190.36), connection timed out Could not connect to security.ubuntu.com:80 (185.125.190.39), connection timed out Could not connect to security.ubuntu.com:80 (91.189.91.81), connection timed out
+Err:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble InRelease
+  Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c05:17c8:ad29:43bf:eb48). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c00:2637:a32b:ccef:30d5). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c00:7447:9a97:fa56:cd92). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c00:e093:e2e5:23b4:529f). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c01:32a9:41b2:cfa3:904a). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c01:ed0c:fdfa:1470:afc0). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c02:b55:260f:8030:b812). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c02:7669:c120:50a2:9af4). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c03:edb9:571f:f204:4ac8). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c04:b8fe:122c:bb55:6b84). - connect (101: Network is unreachable) Could not connect to us-east-1.ec2.archive.ubuntu.com:80 (3.87.126.146), connection timed out Could not connect to us-east-1.ec2.archive.ubuntu.com:80 (3.209.10.109), connection timed out Could not connect to us-east-1.ec2.archive.ubuntu.com:80 (18.232.150.247), connection timed out Could not connect to us-east-1.ec2.archive.ubuntu.com:80 (34.201.250.36), connection timed out Could not connect to us-east-1.ec2.archive.ubuntu.com:80 (34.237.137.22), connection timed out Could not connect to us-east-1.ec2.archive.ubuntu.com:80 (52.91.65.63), connection timed out Could not connect to us-east-1.ec2.archive.ubuntu.com:80 (52.207.133.243), connection timed out Could not connect to us-east-1.ec2.archive.ubuntu.com:80 (54.87.19.168), connection timed out Could not connect to us-east-1.ec2.archive.ubuntu.com:80 (54.144.148.213), connection timed out Could not connect to us-east-1.ec2.archive.ubuntu.com:80 (54.165.17.230), connection timed out
+Err:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates InRelease
+  Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c05:17c8:ad29:43bf:eb48). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c00:2637:a32b:ccef:30d5). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c00:7447:9a97:fa56:cd92). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c00:e093:e2e5:23b4:529f). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c01:32a9:41b2:cfa3:904a). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c01:ed0c:fdfa:1470:afc0). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c02:b55:260f:8030:b812). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c02:7669:c120:50a2:9af4). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c03:edb9:571f:f204:4ac8). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c04:b8fe:122c:bb55:6b84). - connect (101: Network is unreachable)
+Err:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports InRelease
+  Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c05:17c8:ad29:43bf:eb48). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c00:2637:a32b:ccef:30d5). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c00:7447:9a97:fa56:cd92). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c00:e093:e2e5:23b4:529f). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c01:32a9:41b2:cfa3:904a). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c01:ed0c:fdfa:1470:afc0). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c02:b55:260f:8030:b812). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c02:7669:c120:50a2:9af4). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c03:edb9:571f:f204:4ac8). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c04:b8fe:122c:bb55:6b84). - connect (101: Network is unreachable)
+Reading package lists... Done
+W: Failed to fetch http://us-east-1.ec2.archive.ubuntu.com/ubuntu/dists/noble/InRelease  Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c05:17c8:ad29:43bf:eb48). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c00:2637:a32b:ccef:30d5). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c00:7447:9a97:fa56:cd92). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c00:e093:e2e5:23b4:529f). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c01:32a9:41b2:cfa3:904a). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c01:ed0c:fdfa:1470:afc0). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c02:b55:260f:8030:b812). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c02:7669:c120:50a2:9af4). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c03:edb9:571f:f204:4ac8). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c04:b8fe:122c:bb55:6b84). - connect (101: Network is unreachable) Could not connect to us-east-1.ec2.archive.ubuntu.com:80 (3.87.126.146), connection timed out Could not connect to us-east-1.ec2.archive.ubuntu.com:80 (3.209.10.109), connection timed out Could not connect to us-east-1.ec2.archive.ubuntu.com:80 (18.232.150.247), connection timed out Could not connect to us-east-1.ec2.archive.ubuntu.com:80 (34.201.250.36), connection timed out Could not connect to us-east-1.ec2.archive.ubuntu.com:80 (34.237.137.22), connection timed out Could not connect to us-east-1.ec2.archive.ubuntu.com:80 (52.91.65.63), connection timed out Could not connect to us-east-1.ec2.archive.ubuntu.com:80 (52.207.133.243), connection timed out Could not connect to us-east-1.ec2.archive.ubuntu.com:80 (54.87.19.168), connection timed out Could not connect to us-east-1.ec2.archive.ubuntu.com:80 (54.144.148.213), connection timed out Could not connect to us-east-1.ec2.archive.ubuntu.com:80 (54.165.17.230), connection timed out
+W: Failed to fetch http://us-east-1.ec2.archive.ubuntu.com/ubuntu/dists/noble-updates/InRelease  Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c05:17c8:ad29:43bf:eb48). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c00:2637:a32b:ccef:30d5). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c00:7447:9a97:fa56:cd92). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c00:e093:e2e5:23b4:529f). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c01:32a9:41b2:cfa3:904a). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c01:ed0c:fdfa:1470:afc0). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c02:b55:260f:8030:b812). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c02:7669:c120:50a2:9af4). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c03:edb9:571f:f204:4ac8). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c04:b8fe:122c:bb55:6b84). - connect (101: Network is unreachable)
+W: Failed to fetch http://us-east-1.ec2.archive.ubuntu.com/ubuntu/dists/noble-backports/InRelease  Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c05:17c8:ad29:43bf:eb48). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c00:2637:a32b:ccef:30d5). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c00:7447:9a97:fa56:cd92). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c00:e093:e2e5:23b4:529f). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c01:32a9:41b2:cfa3:904a). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c01:ed0c:fdfa:1470:afc0). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c02:b55:260f:8030:b812). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c02:7669:c120:50a2:9af4). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c03:edb9:571f:f204:4ac8). - connect (101: Network is unreachable) Cannot initiate the connection to us-east-1.ec2.archive.ubuntu.com:80 (2600:1f18:5c55:4c04:b8fe:122c:bb55:6b84). - connect (101: Network is unreachable)
+W: Failed to fetch http://security.ubuntu.com/ubuntu/dists/noble-security/InRelease  Cannot initiate the connection to security.ubuntu.com:80 (2620:2d:4002:1::101). - connect (101: Network is unreachable) Cannot initiate the connection to security.ubuntu.com:80 (2620:2d:4002:1::102). - connect (101: Network is unreachable) Cannot initiate the connection to security.ubuntu.com:80 (2620:2d:4002:1::103). - connect (101: Network is unreachable) Cannot initiate the connection to security.ubuntu.com:80 (2620:2d:4000:1::16). - connect (101: Network is unreachable) Cannot initiate the connection to security.ubuntu.com:80 (2620:2d:4000:1::19). - connect (101: Network is unreachable) Could not connect to security.ubuntu.com:80 (91.189.91.82), connection timed out Could not connect to security.ubuntu.com:80 (91.189.91.83), connection timed out Could not connect to security.ubuntu.com:80 (185.125.190.36), connection timed out Could not connect to security.ubuntu.com:80 (185.125.190.39), connection timed out Could not connect to security.ubuntu.com:80 (91.189.91.81), connection timed out
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+ubuntu@ip-172-31-17-189:~$ exit
+logout
+Connection to 54.242.76.57 closed.
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/AWS-file]
+└─$ terraform destroy --auto-approve
+aws_key_pair.key-tf: Refreshing state... [id=key-tf]
+aws_security_group.allow_tls: Refreshing state... [id=sg-0ec2107d9af88d35d]
+aws_instance.instance_for_demoPurpose: Refreshing state... [id=i-0015c9feb6f8643ff]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # aws_instance.instance_for_demoPurpose will be destroyed
+  - resource "aws_instance" "instance_for_demoPurpose" {
+      - ami                                  = "ami-04b70fa74e45c3917" -> null
+      - arn                                  = "arn:aws:ec2:us-east-1:992382744602:instance/i-0015c9feb6f8643ff" -> null
+      - associate_public_ip_address          = true -> null
+      - availability_zone                    = "us-east-1a" -> null
+      - cpu_core_count                       = 1 -> null
+      - cpu_threads_per_core                 = 1 -> null
+      - disable_api_stop                     = false -> null
+      - disable_api_termination              = false -> null
+      - ebs_optimized                        = false -> null
+      - get_password_data                    = false -> null
+      - hibernation                          = false -> null
+      - id                                   = "i-0015c9feb6f8643ff" -> null
+      - instance_initiated_shutdown_behavior = "stop" -> null
+      - instance_state                       = "running" -> null
+      - instance_type                        = "t2.micro" -> null
+      - ipv6_address_count                   = 0 -> null
+      - ipv6_addresses                       = [] -> null
+      - key_name                             = "key-tf" -> null
+      - monitoring                           = false -> null
+      - placement_partition_number           = 0 -> null
+      - primary_network_interface_id         = "eni-0590bf3b7a85abef5" -> null
+      - private_dns                          = "ip-172-31-17-189.ec2.internal" -> null
+      - private_ip                           = "172.31.17.189" -> null
+      - public_dns                           = "ec2-54-242-76-57.compute-1.amazonaws.com" -> null
+      - public_ip                            = "54.242.76.57" -> null
+      - secondary_private_ips                = [] -> null
+      - security_groups                      = [
+          - "allow_tls",
+        ] -> null
+      - source_dest_check                    = true -> null
+      - subnet_id                            = "subnet-0843d4b6e8e2492bf" -> null
+      - tags                                 = {
+          - "Name" = "Only-for-demo-purpose-Terraform"
+        } -> null
+      - tags_all                             = {
+          - "Name" = "Only-for-demo-purpose-Terraform"
+        } -> null
+      - tenancy                              = "default" -> null
+      - user_data_replace_on_change          = false -> null
+      - vpc_security_group_ids               = [
+          - "sg-0ec2107d9af88d35d",
+        ] -> null
+
+      - capacity_reservation_specification {
+          - capacity_reservation_preference = "open" -> null
+        }
+
+      - cpu_options {
+          - core_count       = 1 -> null
+          - threads_per_core = 1 -> null
+        }
+
+      - credit_specification {
+          - cpu_credits = "standard" -> null
+        }
+
+      - enclave_options {
+          - enabled = false -> null
+        }
+
+      - maintenance_options {
+          - auto_recovery = "default" -> null
+        }
+
+      - metadata_options {
+          - http_endpoint               = "enabled" -> null
+          - http_protocol_ipv6          = "disabled" -> null
+          - http_put_response_hop_limit = 2 -> null
+          - http_tokens                 = "required" -> null
+          - instance_metadata_tags      = "disabled" -> null
+        }
+
+      - private_dns_name_options {
+          - enable_resource_name_dns_a_record    = false -> null
+          - enable_resource_name_dns_aaaa_record = false -> null
+          - hostname_type                        = "ip-name" -> null
+        }
+
+      - root_block_device {
+          - delete_on_termination = true -> null
+          - device_name           = "/dev/sda1" -> null
+          - encrypted             = false -> null
+          - iops                  = 3000 -> null
+          - tags                  = {} -> null
+          - tags_all              = {} -> null
+          - throughput            = 125 -> null
+          - volume_id             = "vol-0426bbf3be1163370" -> null
+          - volume_size           = 8 -> null
+          - volume_type           = "gp3" -> null
+        }
+    }
+
+  # aws_key_pair.key-tf will be destroyed
+  - resource "aws_key_pair" "key-tf" {
+      - arn         = "arn:aws:ec2:us-east-1:992382744602:key-pair/key-tf" -> null
+      - fingerprint = "5c:ee:f1:88:30:f9:30:f3:17:9b:ba:2f:86:a8:7c:3d" -> null
+      - id          = "key-tf" -> null
+      - key_name    = "key-tf" -> null
+      - key_pair_id = "key-058529378410774ae" -> null
+      - key_type    = "rsa" -> null
+      - public_key  = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCtP1R3JNu8A4TzSzsWxfOc/PykFGAnbfESGUwzBMKwTE7O2CZe82cIPPYrvBSM1tesnEaa1dwPTzzPaHFgBrUz8cJXIoFeu6nNgXmWv21yc76vg8KF5VvUBT4+jrW5AiBBA7zDrk+Dqi8rDVgq5c7Hh1MgHvFKBxhLDGPGDOmmV/zw48bIklzyzOYPpNT2+GX5KBgS6t3xLv/2wQ5VdCBT+hE3lkwElacMCgQvHNXrhK6oTXiwLMkZNX6FKYQHS41z17wbIT3xpRagaNMDXY+2dq2Rg4G9a/u9FqRffQ2e6BnVGjizLfspm/z97YQHRPb7i+1h595x8SiwtMmjsbEibduFD5y3gtiph4c4jsNJUJoA+hCWwm2e+YzJcoHscGRWxYJvyXk3QBrzEqnWNsc6Rg8ZMN6ZK0LVTAfTUt6ms247xa1pf0F67FdbrYdQnJJrS9IJItsJZCROILfQl1SAf2bjCDtWhbpVWIiFKIcHuRISWrcjS1icWbqwxQXkEu8= kali@The-beast" -> null
+      - tags        = {} -> null
+      - tags_all    = {} -> null
+    }
+
+  # aws_security_group.allow_tls will be destroyed
+  - resource "aws_security_group" "allow_tls" {
+      - arn                    = "arn:aws:ec2:us-east-1:992382744602:security-group/sg-0ec2107d9af88d35d" -> null
+      - description            = "Allow TLS inbound traffic and all outbound traffic" -> null
+      - egress                 = [] -> null
+      - id                     = "sg-0ec2107d9af88d35d" -> null
+      - ingress                = [
+          - {
+              - cidr_blocks      = [
+                  - "0.0.0.0/0",
+                ]
+              - description      = ""
+              - from_port        = 22
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 22
+            },
+          - {
+              - cidr_blocks      = [
+                  - "0.0.0.0/0",
+                ]
+              - description      = ""
+              - from_port        = 3000
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 3000
+            },
+          - {
+              - cidr_blocks      = [
+                  - "0.0.0.0/0",
+                ]
+              - description      = ""
+              - from_port        = 3306
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 3306
+            },
+          - {
+              - cidr_blocks      = [
+                  - "0.0.0.0/0",
+                ]
+              - description      = ""
+              - from_port        = 443
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 443
+            },
+          - {
+              - cidr_blocks      = [
+                  - "0.0.0.0/0",
+                ]
+              - description      = ""
+              - from_port        = 80
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 80
+            },
+        ] -> null
+      - name                   = "allow_tls" -> null
+      - owner_id               = "992382744602" -> null
+      - revoke_rules_on_delete = false -> null
+      - tags                   = {
+          - "Name" = "allow_tls"
+        } -> null
+      - tags_all               = {
+          - "Name" = "allow_tls"
+        } -> null
+      - vpc_id                 = "vpc-0ba02dbfcc257c8d5" -> null
+    }
+
+Plan: 0 to add, 0 to change, 3 to destroy.
+
+Changes to Outputs:
+  - printSGdetails            = "992382744602" -> null
+  - printSecurityGroupDetails = "sg-0ec2107d9af88d35d" -> null
+  - printkey-name             = "key-tf" -> null
+aws_instance.instance_for_demoPurpose: Destroying... [id=i-0015c9feb6f8643ff]
+aws_instance.instance_for_demoPurpose: Still destroying... [id=i-0015c9feb6f8643ff, 10s elapsed]
+aws_instance.instance_for_demoPurpose: Still destroying... [id=i-0015c9feb6f8643ff, 20s elapsed]
+aws_instance.instance_for_demoPurpose: Still destroying... [id=i-0015c9feb6f8643ff, 30s elapsed]
+aws_instance.instance_for_demoPurpose: Still destroying... [id=i-0015c9feb6f8643ff, 40s elapsed]
+aws_instance.instance_for_demoPurpose: Destruction complete after 42s
+aws_key_pair.key-tf: Destroying... [id=key-tf]
+aws_security_group.allow_tls: Destroying... [id=sg-0ec2107d9af88d35d]
+aws_key_pair.key-tf: Destruction complete after 1s
+aws_security_group.allow_tls: Destruction complete after 2s
+
+Destroy complete! Resources: 3 destroyed.
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/AWS-file]
+└─$ terraform apply --auto-approve
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_instance.instance_for_demoPurpose will be created
+  + resource "aws_instance" "instance_for_demoPurpose" {
+      + ami                                  = "ami-04b70fa74e45c3917"
+      + arn                                  = (known after apply)
+      + associate_public_ip_address          = (known after apply)
+      + availability_zone                    = (known after apply)
+      + cpu_core_count                       = (known after apply)
+      + cpu_threads_per_core                 = (known after apply)
+      + disable_api_stop                     = (known after apply)
+      + disable_api_termination              = (known after apply)
+      + ebs_optimized                        = (known after apply)
+      + get_password_data                    = false
+      + host_id                              = (known after apply)
+      + host_resource_group_arn              = (known after apply)
+      + iam_instance_profile                 = (known after apply)
+      + id                                   = (known after apply)
+      + instance_initiated_shutdown_behavior = (known after apply)
+      + instance_lifecycle                   = (known after apply)
+      + instance_state                       = (known after apply)
+      + instance_type                        = "t2.micro"
+      + ipv6_address_count                   = (known after apply)
+      + ipv6_addresses                       = (known after apply)
+      + key_name                             = "key-tf"
+      + monitoring                           = (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      + placement_partition_number           = (known after apply)
+      + primary_network_interface_id         = (known after apply)
+      + private_dns                          = (known after apply)
+      + private_ip                           = (known after apply)
+      + public_dns                           = (known after apply)
+      + public_ip                            = (known after apply)
+      + secondary_private_ips                = (known after apply)
+      + security_groups                      = (known after apply)
+      + source_dest_check                    = true
+      + spot_instance_request_id             = (known after apply)
+      + subnet_id                            = (known after apply)
+      + tags                                 = {
+          + "Name" = "Only-for-demo-purpose-Terraform"
+        }
+      + tags_all                             = {
+          + "Name" = "Only-for-demo-purpose-Terraform"
+        }
+      + tenancy                              = (known after apply)
+      + user_data                            = (known after apply)
+      + user_data_base64                     = (known after apply)
+      + user_data_replace_on_change          = false
+      + vpc_security_group_ids               = (known after apply)
+    }
+
+  # aws_key_pair.key-tf will be created
+  + resource "aws_key_pair" "key-tf" {
+      + arn             = (known after apply)
+      + fingerprint     = (known after apply)
+      + id              = (known after apply)
+      + key_name        = "key-tf"
+      + key_name_prefix = (known after apply)
+      + key_pair_id     = (known after apply)
+      + key_type        = (known after apply)
+      + public_key      = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCtP1R3JNu8A4TzSzsWxfOc/PykFGAnbfESGUwzBMKwTE7O2CZe82cIPPYrvBSM1tesnEaa1dwPTzzPaHFgBrUz8cJXIoFeu6nNgXmWv21yc76vg8KF5VvUBT4+jrW5AiBBA7zDrk+Dqi8rDVgq5c7Hh1MgHvFKBxhLDGPGDOmmV/zw48bIklzyzOYPpNT2+GX5KBgS6t3xLv/2wQ5VdCBT+hE3lkwElacMCgQvHNXrhK6oTXiwLMkZNX6FKYQHS41z17wbIT3xpRagaNMDXY+2dq2Rg4G9a/u9FqRffQ2e6BnVGjizLfspm/z97YQHRPb7i+1h595x8SiwtMmjsbEibduFD5y3gtiph4c4jsNJUJoA+hCWwm2e+YzJcoHscGRWxYJvyXk3QBrzEqnWNsc6Rg8ZMN6ZK0LVTAfTUt6ms247xa1pf0F67FdbrYdQnJJrS9IJItsJZCROILfQl1SAf2bjCDtWhbpVWIiFKIcHuRISWrcjS1icWbqwxQXkEu8= kali@The-beast"
+      + tags_all        = (known after apply)
+    }
+
+  # aws_security_group.allow_tls will be created
+  + resource "aws_security_group" "allow_tls" {
+      + arn                    = (known after apply)
+      + description            = "Allow TLS inbound traffic and all outbound traffic"
+      + egress                 = [
+          + {
+              + cidr_blocks      = [
+                  + "0.0.0.0/0",
+                ]
+              + description      = ""
+              + from_port        = 0
+              + ipv6_cidr_blocks = [
+                  + "::/0",
+                ]
+              + prefix_list_ids  = []
+              + protocol         = "-1"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 0
+            },
+        ]
+      + id                     = (known after apply)
+      + ingress                = [
+          + {
+              + cidr_blocks      = [
+                  + "0.0.0.0/0",
+                ]
+              + description      = ""
+              + from_port        = 22
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "tcp"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 22
+            },
+          + {
+              + cidr_blocks      = [
+                  + "0.0.0.0/0",
+                ]
+              + description      = ""
+              + from_port        = 3000
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "tcp"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 3000
+            },
+          + {
+              + cidr_blocks      = [
+                  + "0.0.0.0/0",
+                ]
+              + description      = ""
+              + from_port        = 3306
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "tcp"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 3306
+            },
+          + {
+              + cidr_blocks      = [
+                  + "0.0.0.0/0",
+                ]
+              + description      = ""
+              + from_port        = 443
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "tcp"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 443
+            },
+          + {
+              + cidr_blocks      = [
+                  + "0.0.0.0/0",
+                ]
+              + description      = ""
+              + from_port        = 80
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "tcp"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 80
+            },
+        ]
+      + name                   = "allow_tls"
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags                   = {
+          + "Name" = "allow_tls"
+        }
+      + tags_all               = {
+          + "Name" = "allow_tls"
+        }
+      + vpc_id                 = (known after apply)
+    }
+
+Plan: 3 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + printSGdetails            = (known after apply)
+  + printSecurityGroupDetails = (known after apply)
+  + printkey-name             = "key-tf"
+aws_key_pair.key-tf: Creating...
+aws_security_group.allow_tls: Creating...
+aws_key_pair.key-tf: Creation complete after 1s [id=key-tf]
+aws_security_group.allow_tls: Creation complete after 5s [id=sg-03abc2a49846e6e0c]
+aws_instance.instance_for_demoPurpose: Creating...
+aws_instance.instance_for_demoPurpose: Still creating... [10s elapsed]
+aws_instance.instance_for_demoPurpose: Still creating... [20s elapsed]
+aws_instance.instance_for_demoPurpose: Creation complete after 25s [id=i-01d13b46d2c9b4eb0]
+
+Apply complete! Resources: 3 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+printSGdetails = "992382744602"
+printSecurityGroupDetails = "sg-03abc2a49846e6e0c"
+printkey-name = "key-tf"
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/AWS-file]
+└─$ ssh -i ubuntu@54.242.76.57
+Warning: Identity file ubuntu@54.242.76.57 not accessible: No such file or directory.
+usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-B bind_interface] [-b bind_address]
+           [-c cipher_spec] [-D [bind_address:]port] [-E log_file]
+           [-e escape_char] [-F configfile] [-I pkcs11] [-i identity_file]
+           [-J destination] [-L address] [-l login_name] [-m mac_spec]
+           [-O ctl_cmd] [-o option] [-P tag] [-p port] [-R address]
+           [-S ctl_path] [-W host:port] [-w local_tun[:remote_tun]]
+           destination [command [argument ...]]
+       ssh [-Q query_option]
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/AWS-file]
+└─$ ssh -i rsa ubuntu@54.242.76.57
+Warning: Identity file rsa not accessible: No such file or directory.
+ssh: connect to host 54.242.76.57 port 22: Connection timed out
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/AWS-file]
+└─$ ssh -i id_rsa ubuntu@54.242.76.57
+ssh: connect to host 54.242.76.57 port 22: Connection timed out
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/AWS-file]
+└─$ ssh -i id_rsa ubuntu@54.242.76.57
+ssh: connect to host 54.242.76.57 port 22: Connection timed out
+
+┌──(kali㉿The-beast)-[~/Terraform-for-beginners/AWS-file]
+└─$ ssh -i id_rsa ubuntu@54.227.224.10
+The authenticity of host '54.227.224.10 (54.227.224.10)' can't be established.
+ED25519 key fingerprint is SHA256:73li0m2gvkLOczBTdZYmr+/7X+S1GBY/XBKCuvYIVTw.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '54.227.224.10' (ED25519) to the list of known hosts.
+Welcome to Ubuntu 24.04 LTS (GNU/Linux 6.8.0-1008-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Tue May 21 03:05:01 UTC 2024
+
+  System load:  0.08              Processes:             104
+  Usage of /:   23.1% of 6.71GB   Users logged in:       0
+  Memory usage: 19%               IPv4 address for enX0: 172.31.18.38
+  Swap usage:   0%
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@ip-172-31-18-38:~$ apt-get update
+Reading package lists... Done
+E: Could not open lock file /var/lib/apt/lists/lock - open (13: Permission denied)
+E: Unable to lock directory /var/lib/apt/lists/
+W: Problem unlinking the file /var/cache/apt/pkgcache.bin - RemoveCaches (13: Permission denied)
+W: Problem unlinking the file /var/cache/apt/srcpkgcache.bin - RemoveCaches (13: Permission denied)
+ubuntu@ip-172-31-18-38:~$ sudo apt-get update
+Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble InRelease [256 kB]
+Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates InRelease [89.7 kB]
+Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports InRelease [89.7 kB]
+Get:4 http://security.ubuntu.com/ubuntu noble-security InRelease [89.7 kB]   
+Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 Packages [1401 kB]
+Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main Translation-en [513 kB]
+Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 Packages [15.0 MB]    
+Get:8 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [29.7 kB]            
+Get:9 http://security.ubuntu.com/ubuntu noble-security/main Translation-en [9156 B]           
+Get:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe Translation-en [5982 kB]
+Get:11 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [16.3 kB]            
+Get:12 http://security.ubuntu.com/ubuntu noble-security/universe Translation-en [5844 B]             
+Get:13 http://security.ubuntu.com/ubuntu noble-security/universe amd64 c-n-f Metadata [112 B]          
+Get:14 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 c-n-f Metadata [116 B]        
+Get:15 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 Components [3871 kB]        
+Get:16 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 c-n-f Metadata [301 kB]
+Get:17 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/restricted amd64 Packages [93.9 kB]
+Get:18 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/restricted Translation-en [18.7 kB]
+Get:19 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [269 kB]
+Get:20 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/multiverse Translation-en [118 kB]
+Get:21 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/multiverse amd64 Components [35.0 kB]
+Get:22 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/multiverse amd64 c-n-f Metadata [8328 B]
+Get:23 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [34.4 kB]
+Get:24 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [11.0 kB]
+Get:25 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [20.7 kB]
+Get:26 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [7300 B]
+Get:27 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/universe amd64 c-n-f Metadata [112 B]
+Get:28 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 c-n-f Metadata [116 B]
+Get:29 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports/main amd64 c-n-f Metadata [112 B]
+Get:30 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [5812 B]
+Get:31 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports/universe Translation-en [2152 B]
+Get:32 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports/universe amd64 c-n-f Metadata [116 B]
+Get:33 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports/restricted amd64 c-n-f Metadata [116 B]
+Get:34 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 c-n-f Metadata [116 B]
+Fetched 28.3 MB in 6s (5109 kB/s)                                
+Reading package lists... Done
+ubuntu@ip-172-31-18-38:~$ 
+
+
+
+
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
+}
+
+#Configure the AWS Provider
+
+# provider "aws" {
+#   region = "us-east-1"
+# }
+
+resource "aws_instance" "instance_for_demoPurpose" {
+  ami             = "ami-04b70fa74e45c3917"
+  instance_type   = "t2.micro"
+  key_name        = "${aws_key_pair.key-tf.key_name}"
+  vpc_security_group_ids =  ["${aws_security_group.allow_tls.id}"]
+  tags = {
+    Name = "Only-for-demo-purpose-Terraform"
+  }
+}
+
+
+resource "aws_key_pair" "key-tf" {
+  key_name   = "key-tf"
+  public_key = file("${path.module}/id_rsa.pub")
+}
+
+output "printkey-name" {
+  value = aws_key_pair.key-tf.key_name
+
+}
+
+
+# Creating Security Group and attached to the EC2 Instance
+
+resource "aws_security_group" "allow_tls" {
+  name        = "allow_tls"
+  description = "Allow TLS inbound traffic and all outbound traffic"
+  tags = {
+    Name = "allow_tls"
+  }
+  dynamic "ingress" {
+    for_each = [22,80,443,3306,3000]
+    iterator = port
+    content {
+      from_port   = port.value
+      protocol    = "tcp"
+      to_port     = port.value
+      cidr_blocks = ["0.0.0.0/0"]
+    }
+  }
+   egress {
+    from_port        = 0
+    to_port          = 0
+    protocol         = "-1"
+    cidr_blocks      = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
+  }
+}
+
+output "printSecurityGroupDetails" {
+  value = aws_security_group.allow_tls.id
+}
+output "printSGdetails" {
+  value = aws_security_group.allow_tls.owner_id
+}
+
+#   # resource "aws_vpc_security_group_ingress_rule" "allow_tls_ipv4" {
+#   # security_group_id = aws_security_group.allow_tls.id
+#   ingress {
+#     from_port   = 443
+#     protocol    = "tcp"
+#     to_port     = 443
+#     cidr_blocks = ["0.0.0.0/0"]
+#   }
+#   # resource "aws_vpc_security_group_ingress_rule" "allow_tls_ipv4" {
+#   # security_group_id = aws_security_group.allow_tls.id
+#   ingress {
+#     from_port   = 80
+#     protocol    = "tcp"
+#     to_port     = 80
+#     cidr_blocks = ["0.0.0.0/0"]
+#   }
+#   # resource "aws_vpc_security_group_ingress_rule" "allow_tls_ipv4" {
+#   # security_group_id = aws_security_group.allow_tls.id
+#   ingress {
+#     from_port   = 22
+#     protocol    = "tcp"
+#     to_port     = 22
+#     cidr_blocks = ["0.0.0.0/0"]
+#   }
+#   # resource "aws_vpc_security_group_ingress_rule" "allow_tls_ipv4"
+#   ingress {
+#     # security_group_id = aws_security_group.allow_tls.id
+#     from_port   = 3306
+#     protocol    = "tcp"
+#     to_port     = 3306
+#     cidr_blocks = ["0.0.0.0/0"]
+#   }
+
+#   # resource "aws_vpc_security_group_ingress_rule" "allow_tls_ipv6" {
+#   #   security_group_id = aws_security_group.allow_tls.id
+#   #   from_port         = 443
+#   #   ip_protocol       = "tcp"
+#   #   to_port           = 443
+#   # }
+
+#   # resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4" {
+#   #   security_group_id = aws_security_group.allow_tls.id
+#   #   cidr_ipv4         = "0.0.0.0/0"
+#   #   ip_protocol       = "-1" # semantically equivalent to all ports
+#   # }
+# }
+
+# # resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv6" {
+# #   security_group_id = aws_security_group.allow_tls.id
+# #   cidr_ipv6         = "::/0"
+# #   ip_protocol       = "-1" # semantically equivalent to all ports
+# # }
+
+
+#  ingress {
+#     from_port   = 443
+#     protocol    = "tcp"
+#     to_port     = 443
+#     cidr_blocks = ["0.0.0.0/0"]
+#   }
+
+
+
